@@ -35,6 +35,8 @@ if not ALLOWED_EMBEDDED_DOMAINS:
 
 GUEST_TOKEN_JWT_SECRET = os.environ.get("SUPERSET_GUEST_TOKEN_JWT_SECRET")
 
+ENABLE_PROXY_FIX = True
+TALISMAN_ENABLED = False
 
 # --- CORS Configuration ---
 ENABLE_CORS = True
@@ -49,3 +51,14 @@ CORS_OPTIONS = {
 SESSION_COOKIE_SAMESITE = None
 SESSION_COOKIE_SECURE = False
 SESSION_COOKIE_HTTPONLY = False
+
+# --- CSRF Settings ---
+# WARNING: INSECURE - DO NOT USE IN PRODUCTION
+WTF_CSRF_ENABLED = False
+WTF_CSRF_EXEMPT_LIST = [  # Keep list in case you re-enable CSRF later
+    'superset.views.core.guest_token',
+    'app.views.api.guest_token',
+    'superset.security.api.guest_token',
+    'superset.security.api.SecurityRestApi.guest_token',
+    '/api/v1/security/guest_token/'
+]

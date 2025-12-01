@@ -12,7 +12,9 @@ services:
       - SUPERSET_SECRET_KEY=3xLIotTtRWWoTfGqshCQq8XBy34dadK1Vo24uxzzMwYiLRdt4dvgc8F0
       - ADMIN_USERNAME=admin
       - ADMIN_PASSWORD=admin
-      - ADMIN_EMAIL=chando@dondo.co.zw      
+      - ADMIN_EMAIL=chando@dondo.co.zw
+      - ALLOWED_EMBEDDED_DOMAINS=http://localhost:5173,http://localhost:8000,http://localhost:8080
+      - SUPERSET_GUEST_TOKEN_JWT_SECRET=y1zxFd9MoGVgiaHJ5fPJlmq/VWzy5OMdfK4HPSF5W2s=
     depends_on:
       - db
   db:
