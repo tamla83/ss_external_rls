@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Sidebar from './layouts/Sidebar';
 import DashboardPage from './pages/Dashboard';
@@ -8,7 +7,7 @@ function App() {
     <Router>
       <div style={{ display: 'flex' }}>
         <Sidebar />
-        <div style={{ flexGrow: 1 }}>
+        <div style={{ flexGrow: 1, marginLeft: '260px' }}>
           <Routes>
             <Route path="/" element={<DashboardPage />} />
             {/* Add more routes here later */}
