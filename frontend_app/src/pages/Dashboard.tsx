@@ -107,10 +107,14 @@ function DashboardPage() {
           mountPoint: mountPoint,
           fetchGuestToken: fetchGuestTokenCallback,
           dashboardUiConfig: {
-            hideTitle: true,
-            // Add other configuration here (e.g., hide filter box)
+            hideTitle: false,            
+            filters: {
+              visible: true,
+              expanded: true,
+            },
           },
           // You can add event handlers here (e.g., onDashboardLoaded)
+          iframeSandboxExtras: ['allow-top-navigation', 'allow-popups-to-escape-sandbox']
         });
 
         const iframe = mountPoint.querySelector("iframe");
